@@ -1,5 +1,8 @@
 {/*Ejercicio 1 */}
 
+
+
+
   const produtos = [
   { id: 1, nome: "Teclado", prezo: 25 },
   { id: 2, nome: "Rato", prezo: 15 },
@@ -12,7 +15,7 @@ export default function Tenda() {
     <img src="logo.png" alt="Logo"/>
     <ul>
       {produtos.map((p) => (
-        <li>{p.id} - {p.nome} - {p.prezo} €</li>
+        <li key={p.id}> {p.nome} - {p.prezo} €</li>
       ))}
     </ul>
    </>

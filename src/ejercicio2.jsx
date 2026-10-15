@@ -18,7 +18,7 @@ export default function Exercicio2(){
 <img src={foto+".jpg"} alt={alternativa +  "Anos de experiencia: " + (2026 - inicio)} className="foto"/>
 <p className="rol">{rol}</p> 
 <label for="correo">Correo</label>
-<input id="correo" type="email" tabindex="1"/>
+<input id="correo" type="email" tabindex={1}/>
 <ul>
   <li>HTML</li>
   <li>CSS</li>
