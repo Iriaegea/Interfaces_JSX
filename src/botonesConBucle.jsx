@@ -13,33 +13,51 @@
   }
 
 
- export default function Taboleiro() {
+ export default function BotonesConBucle() {
   const source = "dimensiones-pista-de-padel.jpg"
   const alternativa = "Heidy Lamar"
   const ciclos = "DAM, SMR"
+
+  
   const ies = {
     nome: "nombre",
     direccion: "O castelo"
   }
-  const arrayValores= [1,2,3,4,5,6,7,8,9]
+
+  const array = [1, 2, 3]
+  let contador = 0;
+
+
+  function crearEtiqueta({i}){
+    if(i > 3){
+      contador = contador + 1;
+      return <Cadrado key={i + contador} valor={i+ contador}/>
+      
+    } else {
+      <Cadrado key={i} valor={i}/>
+    }
+    
+  }
+
   return (
     <>
-  
+
+      {array.map((i) => <div key={i} className="board-row key">  {array.map((i) => crearEtiqueta({i}))}  </div>)}
+
+      {/*
+      <div className="board-row">
+        {array.map((i) => <Cadrado key={i} valor={i}/>)}
+      </div>
+      <div className="board-row">
+        {array46.map((i) => <Cadrado key={i} valor={i}/>)}
+      </div>
+      <div className="board-row">
+       {array79.map((i) => <Cadrado key={i} valor={i}/>)}
+      </div>
+       */}
       
-      <div className="board-row">
-        <Cadrado valor={arrayValores.map((v) => v)}/>
-      </div>
-      <div className="board-row">
-        <Cadrado valor = "4"/>
-        <Cadrado valor = "5"/>
-        <Cadrado valor = "6"/>
-      </div>
-      <div className="board-row">
-        <Cadrado valor = "7"/>
-        <Cadrado valor = "8"/>
-        <Cadrado valor = "9"/>
-      </div>
     </>
 
   );
+
  }

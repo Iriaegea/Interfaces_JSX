@@ -2,23 +2,22 @@
 
 
 
-{
-/*import Exercicio3 from "./Exercicio3.jsx"
+
+import BotonesConBucle from "./botonesConBucle.jsx"
 
 export default function Taboleiro(){
   return(
-      <Exercicio3></Exercicio3>
+      <BotonesConBucle/>
   );
 
   
 }
- */
-}
 
 
 
 
-{/* EJEMPLO CLASE: */}
+
+{/* EJEMPLO CLASE: 
 
 
   // todas las etiquetas tienen q tener cierre
@@ -66,3 +65,4 @@ export default function Taboleiro(){
 
 
 
+*/}
