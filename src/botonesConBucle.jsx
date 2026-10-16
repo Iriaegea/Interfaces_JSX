@@ -13,6 +13,13 @@
   }
 
 
+
+  function crearEtiqueta({i, j}){
+    
+      return <Cadrado key={(i+j) -1} valor={(i+j) -1}/>
+  }
+
+
  export default function BotonesConBucle() {
   const source = "dimensiones-pista-de-padel.jpg"
   const alternativa = "Heidy Lamar"
@@ -28,21 +35,11 @@
   let contador = 0;
 
 
-  function crearEtiqueta({i}){
-    if(i > 3){
-      contador = contador + 1;
-      return <Cadrado key={i + contador} valor={i+ contador}/>
-      
-    } else {
-      <Cadrado key={i} valor={i}/>
-    }
-    
-  }
-
+  
   return (
     <>
 
-      {array.map((i) => <div key={i} className="board-row key">  {array.map((i) => crearEtiqueta({i}))}  </div>)}
+      {array.map((i) => <div key={i} className="board-row key">  {array.map((j) => crearEtiqueta({i, j}))}  </div>)}
 
       {/*
       <div className="board-row">
