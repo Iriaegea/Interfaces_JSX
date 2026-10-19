@@ -1,0 +1,14 @@
+
+        /* Estilos de enfoque de accesibilidad mejorados */
+        *:focus-visible {
+            outline: 3px solid #10b981 !important;
+            outline-offset: 2px !important;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+   

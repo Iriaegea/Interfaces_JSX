@@ -2,12 +2,11 @@
 
 
 
-
-import BotonesConBucle from "./botonesConBucle.jsx"
+import CambiarMiAplicacion from "./cambiarMiAplicacion.jsx"
 
 export default function Taboleiro(){
   return(
-      <BotonesConBucle/>
+      <CambiarMiAplicacion/>
   );
 
   
