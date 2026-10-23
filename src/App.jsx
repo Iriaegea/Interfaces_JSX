@@ -1,21 +1,41 @@
 
 
+import "./reserva.css"
+import Tarjeta from "./Tarjeta.jsx"
+
+const pista = {
+  id : 1,
+  disponible : true,
+  textoDisponibilidad :"Disponible hoy",
+  gratuito : "Gratis",
+  nombrePista:"Pista Polideportiva Municipal Centro",
+  textoBotonReservar:"Reservar espacio",
+  textoLugar : " Calle de la Alameda, 14 • Multideporte"
+
+
+}
+
+
+const pistas = [pista, 
+  { ...pista, id : 2, disponible: false}, 
+  { ...pista, id : 3, disponible: true}, 
+  { ...pista, id : 4, disponible:false}]
 
 
 
 
 
-
-
-
-
-
-
-import CambiarMiAplicacion from "./cambiarMiAplicacion.jsx"
 
 export default function Taboleiro(){
   return(
-      <CambiarMiAplicacion textoDisponibilidad = "Disponible hoy" gratuito = "Gratis" nombrePista="Pista Polideportiva Municipal Centro" textoBotonReservar="Reservar espacio" textoLugar = " Calle de la Alameda, 14 • Multideporte"/>
+    <>
+    {
+        pistas.map((pista )=><Tarjeta key = {pista.id} contido = {pista}/>)
+    }
+     
+    </>
+     
+  
   );
 
   
