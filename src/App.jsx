@@ -2,11 +2,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
 import CambiarMiAplicacion from "./cambiarMiAplicacion.jsx"
 
 export default function Taboleiro(){
   return(
-      <CambiarMiAplicacion/>
+      <CambiarMiAplicacion textoDisponibilidad = "Disponible hoy" gratuito = "Gratis" nombrePista="Pista Polideportiva Municipal Centro" textoBotonReservar="Reservar espacio" textoLugar = " Calle de la Alameda, 14 • Multideporte"/>
   );
 
   
