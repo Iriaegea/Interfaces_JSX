@@ -101,6 +101,14 @@ function Drink({ name }) {
   
   );
 }
+export default function DrinkList() {
+  return (
+    <div>
+      <Drink name="té" />
+      <Drink name="café" />
+    </div>
+  );
+}
 
 // poner array bebidas generico https://codesandbox.io/p/sandbox/react-dev-forked-43wmqh?file=%2Fsrc%2FApp.js%3A24%2C16
 
@@ -147,12 +155,4 @@ export default function DrinkList() {
 }
 
 
-export default function DrinkList() {
-  return (
-    <div>
-      <Drink name="té" />
-      <Drink name="café" />
-    </div>
-  );
-}
 
