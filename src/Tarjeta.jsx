@@ -23,6 +23,10 @@ export default function Tarjeta({contido}){
                                 {contido.textoBotonReservar}
                             </button>
                         </div>
+
+
+
+                    
         </>
     )
 }
