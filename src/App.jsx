@@ -6,8 +6,8 @@ import Tarjeta from "./Tarjeta.jsx"
 const pista = {
   id : 1,
   disponible : true,
-  textoDisponibilidad :"Disponible hoy",
-  gratuito : "Gratis",
+  textoDisponibilidad :"Disponible",
+  gratuito : "  Gratis",
   nombrePista:"Pista Polideportiva Municipal Centro",
   textoBotonReservar:"Reservar espacio",
   textoLugar : " Calle de la Alameda, 14 • Multideporte"
@@ -17,9 +17,9 @@ const pista = {
 
 
 const pistas = [pista, 
-  { ...pista, id : 2, disponible: false}, 
-  { ...pista, id : 3, disponible: true}, 
-  { ...pista, id : 4, disponible:false}]
+  { ...pista, id : 2, textoDisponibilidad: "Disponible"}, 
+  { ...pista, id : 3, textoDisponibilidad: "No disponible"}, 
+  { ...pista, id : 4, textoDisponibilidad:"Disponible"}]
 
 
 

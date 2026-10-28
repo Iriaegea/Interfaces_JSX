@@ -6,12 +6,15 @@
 
 
 export default function Tarjeta({contido}){
+
+    
+
     return(
         <>
             <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-md transition">
                             <div className="flex justify-between items-start mb-2">
                                 <span className="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded-full font-medium flex items-center gap-1">
-                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> {contido.textoDisponibilidad}
+                                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> {contido.textoDisponibilidad === "Disponible"? contido.textoDisponibilidad :<del>{contido.textoDisponibilidad}</del> }
                                 </span>
                                 <span className="text-emerald-600 font-bold text-xs uppercase tracking-wider">{contido.gratuito}</span>
                             </div>
