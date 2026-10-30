@@ -3,6 +3,11 @@
 import "./reserva.css"
 import Tarjeta from "./Tarjeta.jsx"
 
+import MiAppBar from "./MiAppBar.jsx"
+
+
+
+
 const pista = {
   id : 1,
   disponible : true,
@@ -29,9 +34,11 @@ const pistas = [pista,
 export default function Taboleiro(){
   return(
     <>
+    <MiAppBar ></MiAppBar>
     {
         pistas.map((pista )=><Tarjeta key = {pista.id} contido = {pista}/>)
     }
+    <button className="btn-solid theme-warning">Gardar</button>
      
     </>
      
