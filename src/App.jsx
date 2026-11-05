@@ -1,22 +1,119 @@
-import './App.css'
+import { useState } from "react";
 
-import Toolbar from './Toolbar.jsx'
-import Galeria from './Galeria.jsx'
-import Button from './Button.jsx'
 
-export default function App(){
-  return (
-    <>
+
+  
+   function Cadrado({valor}){
+    const [valor, setValor] = useState(null) 
+    function onClic(){
+      setValor('X');
+    }
+     return <button onClick={onClic}  className= "square">{valor}</button>
+   }
+  
+  
+  
+  
+  export default function Taboleiro() {
+   
+   return (
+     <>
+  
+        <div className="board-row">
+         <Cadrado />
+         <Cadrado/>
+         <Cadrado />
+       </div>
+       <div className="board-row">
+         <Cadrado />
+         <Cadrado />
+         <Cadrado />
+       </div>
+       <div className="board-row">
+         <Cadrado/>
+         <Cadrado />
+         <Cadrado />
+       </div> 
+     </>
+
+   );
+  }
+  
+  
+  /*
+  function Cadrado({valor}){ //hay q meterlo entre llaves pq es diferente a js
     
-      <Toolbar
-      onPelicula = {() => alert("Reproducindo")}
-      onImaxe = {() => alert("Cargando imaxe")}
-      ></Toolbar>
-      <Galeria></Galeria>
+     return <button  key={valor} className= "square">{valor}</button>
+   }
 
-    </>
-  );
-}
+
+  export default function Taboleiro() {
+    const numeros = [1,2,3]
+   return (
+     <>
+  
+        {numeros.map((fila) => 
+        <div key={fila} className="board-row"> 
+          {numeros.map((n) => <Cadrado key={n} valor={(fila - 1) * 3 + n}></Cadrado>)}
+        </div>)}
+
+
+
+
+
+
+       {/* <div className="board-row">
+         <Cadrado valor = "1"/>
+         <Cadrado valor = "2"/>
+         <Cadrado valor = "3"/>
+       </div>
+       <div className="board-row">
+         <Cadrado valor = "4"/>
+         <Cadrado valor = "5"/>
+         <Cadrado valor = "6"/>
+       </div>
+       <div className="board-row">
+         <Cadrado valor = "7"/>
+         <Cadrado valor = "8"/>
+         <Cadrado valor = "9"/>
+       </div> }
+     </>
+
+   );
+  }
+
+
+
+}// */
+
+
+
+
+
+
+
+
+
+
+// import './App.css'
+
+// import Toolbar from './Toolbar.jsx'
+// import Galeria from './Galeria.jsx'
+// import Button from './Button.jsx'
+
+// export default function App(){
+//   return (
+//     <>
+    
+//       <Toolbar
+//       onPelicula = {() => alert("Reproducindo")}
+//       onImaxe = {() => alert("Cargando imaxe")}
+//       ></Toolbar>
+//       <Galeria></Galeria>
+
+//     </>
+//   );
+// }
 
 
 
