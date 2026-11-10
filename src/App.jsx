@@ -3,36 +3,73 @@ import { useState } from "react";
 
 
   
-   function Cadrado({valor}){
-    const [valor, setValor] = useState(null) 
-    function onClic(){
-      setValor('X');
-    }
-     return <button onClick={onClic}  className= "square">{valor}</button>
+   function Cadrado({valor, onCadradoClick}){
+   
+   
+     return <button onClick={onCadradoClick}  className= "square">{valor}</button>
    }
   
   
-  
+  function calcularGanador(cadrados){
+    const ganadoras = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6]
+    ];
+    for(let i = 0; i<ganadoras.length; i++){
+      const [a,b,c] = ganadoras[i];
+      if(cadrados[a] && cadrados)
+    }
+  }
   
   export default function Taboleiro() {
-   
+   const [xTurno, setXTurno] = useState(true);
+   const [cadrados, setCadrados] = useState(Array(9).fill(null));
+
+     const ganador = calcularGanador();
+      let estado;
+      if(ganador){
+        estado = "Ganador: " + ganador;
+
+      } else {
+        estado = "Seguinte xogador: " + (xTurno? "X" : "O");
+      }
+
+   function handleClick(i){
+      const novosCadrados = cadrados.slice(); // se usa para copiar el array
+     
+      if(xTurno){
+        novosCadrados[i] = "X";
+      }else {
+        novosCadrados[i] = "O";
+      }
+     
+      setCadrados(novosCadrados);
+      setXTurno(!xTurno);
+   }
    return (
      <>
-  
+
+        <div>{estado}</div>
         <div className="board-row">
-         <Cadrado />
-         <Cadrado/>
-         <Cadrado />
+         <Cadrado valor={cadrados[0]} onCadradoClick={() => handleClick(0)}/>
+         <Cadrado valor={cadrados[1]  }onCadradoClick={() => handleClick(1)}/>
+         <Cadrado valor={cadrados[2] }onCadradoClick={() => handleClick(2)}/>
        </div>
        <div className="board-row">
-         <Cadrado />
-         <Cadrado />
-         <Cadrado />
+         <Cadrado valor={cadrados[3]}onCadradoClick={() => handleClick(3)} />
+         <Cadrado valor={cadrados[4]}onCadradoClick={() => handleClick(4)}/>
+         <Cadrado valor={cadrados[5]}onCadradoClick={() => handleClick(5)}/>
        </div>
        <div className="board-row">
-         <Cadrado/>
-         <Cadrado />
-         <Cadrado />
+         <Cadrado valor={cadrados[6]}onCadradoClick={() => handleClick(6)}/>
+         <Cadrado valor={cadrados[7]}onCadradoClick={() => handleClick(7)}/>
+         <Cadrado valor={cadrados[8]}onCadradoClick={() => handleClick(8)}/>
        </div> 
      </>
 
@@ -172,6 +209,7 @@ import { useState } from "react";
 //         pistas.map((pista )=><Tarjeta key = {pista.id} contido = {pista}/>)
 //     }
 //     <button className="btn-solid theme-warning">Gardar</button>
+ 
      
 //     </>
      
