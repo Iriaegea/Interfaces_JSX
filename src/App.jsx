@@ -1,6 +1,41 @@
 import { useState } from "react";
+export default function BuscadorProductos(){
+  
+
+const productos = [
+  'Teclado mecánico',
+  'Rato sen fíos',
+  'Monitor 4K',
+  'Auriculares bluetooth',
+  'Alfombrilla RGB',
+  'Cámara web HD'
+];
+
+const [texto, setTexto] = useState("")
 
 
+texto =  prompt("Escribe el producto que quieres buscar: ").trim().toLowerCase()
+if(texto != ""){
+  
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EJERCICIO ESTADOS CUADRADO
 
   
    function Cadrado({valor, onCadradoClick}){
@@ -21,17 +56,23 @@ import { useState } from "react";
       [0,4,8],
       [2,4,6]
     ];
+    let ganador = null
     for(let i = 0; i<ganadoras.length; i++){
       const [a,b,c] = ganadoras[i];
-      if(cadrados[a] && cadrados)
+     
+      if(cadrados[a] && cadrados[a] == cadrados[b] && cadrados[a] == cadrados[c]){
+        ganador = cadrados[a]
+      }
+      
     }
+    return ganador
   }
   
   export default function Taboleiro() {
    const [xTurno, setXTurno] = useState(true);
    const [cadrados, setCadrados] = useState(Array(9).fill(null));
 
-     const ganador = calcularGanador();
+     const ganador = calcularGanador(cadrados);
       let estado;
       if(ganador){
         estado = "Ganador: " + ganador;
@@ -76,6 +117,19 @@ import { useState } from "react";
    );
   }
   
+
+
+*/
+
+
+
+
+
+
+
+
+
+
   
   /*
   function Cadrado({valor}){ //hay q meterlo entre llaves pq es diferente a js
